@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Add movie</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/add_movie.css') }}">
+</head>
+<body>
+<header class="admin-header">
+    <div class="admin-dashboard">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        <a href="{{ path('app_logout') }}">Logout</a>
+    </div>
+</header>
+<aside class="admin-sidebar">
+    <a href="{{ path('app-admin') }}"><img src="{{ asset('images/imdblogo.png') }}" alt="IMDb Logo" class="logo"></a>
+    <nav class="admin-nav">
+        <ul class="admin-menu">
+            <li><a href="{{ path('app-admin') }}" class="admin-menu-item">Movie List</a></li>
+            <li><a href="{{ path('add_movie') }}" class="admin-menu-item">Add Movies</a></li>
+            <li><a href="{{ path('view-rating') }}" class="admin-menu-item">View Ratings</a></li>
+        </ul>
+    </nav>
+</aside>
+<main class="admin-content">
+    <h1 class="admin-title">Add New Movies</h1>
+    {% block content %}
+        <form method="post" action="{{ path('add_movie') }}">
+            {{ form_start(form) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.director) }}
+            {{ form_row(form.year) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.category) }}
+            <button type="submit" class="btn btn-primary">Add Movie</button>
+            {{ form_end(form) }}
+        </form>
+    {% endblock %}
+</main>
+</body>
+</html>

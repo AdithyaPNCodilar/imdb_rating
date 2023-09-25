@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="a-section a-spacing-medium a-text-center logo-sec">
+        <a class="a-link-nav-icon" tabindex="-1">
+            <img src="{{ asset('images/imdblogo.png') }}" alt="IMDblogo"/>
+        </a>
+    </div>
+
+    <div class="registration">
+        <div class="registration-box">
+            <h1 class="head">Create account</h1>
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.name) }}
+            {{ form_row(registrationForm.email, {
+                'attr': {
+                    'class': 'form-control',
+                    'id': 'email-input'
+                }
+            }) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+
+            <div class="centered-button">
+                <button type="submit" class="btn">Create your IMDb account</button>
+            </div>
+            {{ form_end(registrationForm) }}
+
+            <p class="centered-text">Already have an account? <a href="{{ path('app_login') }}">Sign In</a></p>
+        </div>
+    </div>
+    {% block javascripts %}
+        <script>
+            function validateEmail(input) {
+                const email = input.value;
+                const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+            }
+        </script>
+    {% endblock %}
+{% endblock %}

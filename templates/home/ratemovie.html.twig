@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+<header class="admin-header">
+    <div class="admin-dashboard">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+    </div>
+</header>
+<aside class="admin-sidebar">
+    <a href="{{ path('app-admin') }}"><img src="{{ asset('images/imdblogo.png') }}" alt="IMDb Logo" class="logo"></a>
+        <nav class="admin-nav">
+            <ul class="admin-menu">
+                <li><a href="{{ path('home') }}" class="admin-menu-item">View Movie List</a></li>
+            </ul>
+        </nav>
+</aside>
+<main class="admin-content">
+    {% block content %}
+        {% block body %}
+            <h1>Rate Movie</h1>
+
+            {{ form_start(form) }}
+
+            {{ form_row(form.rating, { 'label': 'Rating (1-5)' }) }}
+
+            {{ form_row(form.review, { 'label': 'Review' }) }}
+
+            <button type="submit" class="btn btn-primary">Submit Rating</button>
+
+            {{ form_end(form) }}
+        {% endblock %}
+    {% endblock %}
+</main>
+</body>
+</html>

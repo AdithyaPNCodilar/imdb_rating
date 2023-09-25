@@ -1,0 +1,109 @@
+body, h1, ul, li, a, table {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.admin-header {
+    background-color: grey;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.admin-dashboard {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.admin-dashboard a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.admin-header-title h2 {
+    font-size: 20px;
+}
+
+/* Admin sidebar styles */
+.admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: grey;
+    color: #fff;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    margin: 20px 20px 0 20px;
+}
+
+.admin-nav {
+    padding: 20px;
+}
+
+.admin-menu {
+    padding: 0;
+}
+
+.admin-menu-item {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.2s;
+}
+
+.admin-menu-item:hover {
+    background-color: #555;
+}
+
+.admin-content {
+    margin-left: 250px;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.admin-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Style table header */
+.table thead th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 8px;
+}
+
+/* Style table rows */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style table cell content */
+.table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Add hover effect to table rows */
+.table tbody tr:hover {
+    background-color: #ddd;
+}

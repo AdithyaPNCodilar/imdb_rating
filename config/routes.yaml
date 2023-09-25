@@ -3,3 +3,47 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+app-register:
+    path: /register
+    controller: App\Controller\RegistrationController::register
+
+app-login:
+    path: / login
+    controller: App\Controller\SecurityController::login
+
+app-admin:
+    path: /admin
+    controller: App\Controller\Admin\DashboardController::index
+
+add_movie:
+    path: /admin/addmovie
+    controller: App\Controller\Admin\DashboardController::addMovie
+
+delete_movie:
+    path: /admin/delete-movie/{id}
+    controller: App\Controller\Admin\DashboardController::deleteMovie
+
+edit_movie:
+    path: /admin/edit/{id}
+    controller: App\Controller\Admin\DashboardController::editMovie
+
+rate-movie:
+    path: /rate-movie/{movieId}
+    controller: App\Controller\RatingController::rateMovie
+
+view-rating:
+    path: /admin/view-rating
+    controller: App\Controller\Admin\DashboardController::showMovie
+
+delete-rating:
+    path: /admin/delete-rating/{id}
+    controller: App\Controller\Admin\DashboardController::deleteRating
+
+edit-rating:
+    path: /admin/edit-rating/{id}
+    controller: App\Controller\Admin\DashboardController::editRating

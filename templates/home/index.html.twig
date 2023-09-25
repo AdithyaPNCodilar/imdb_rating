@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+<header class="admin-header">
+    <div class="admin-dashboard">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+    </div>
+</header>
+<aside class="admin-sidebar">
+    <a href="{{ path('app-admin') }}"><img src="{{ asset('images/imdblogo.png') }}" alt="IMDb Logo" class="logo"></a>
+    <nav class="admin-nav">
+        <ul class="admin-menu">
+            <li><a href="{{ path('home') }}" class="admin-menu-item">View Movie List</a></li>
+{#            <li><a href="{{ path('user-rating') }}" class="admin-menu-item">View Ratings</a></li>#}
+        </ul>
+    </nav>
+</aside>
+<main class="admin-content">
+    {% block content %}
+        <div class="container">
+
+            <div class="movie-list">
+                <h2 class="text-center">Movie List</h2>
+                <ul class="movie-cards">
+                    <img src="{{ asset('images/intothewild.jpg') }}" height=500px width=100%">
+                    {% for movie in movies %}
+                        <li class="movie-card">
+                            <div class="card-content">
+                                <h3>{{ movie.title }}</h3>
+                                <p>Released: {{ movie.year }}</p>
+                                <p>Director: {{ movie.director }}</p>
+                                <p>Category: {{ movie.category }}</p>
+                                <p>Description: {{ movie.description }}</p>
+                                <button class="btn btn-primary">
+                                    <a href="{{ path('rate-movie', {'movieId': movie.id}) }}">Rate the Movie</a>
+                                </button>
+
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <h2>Your Ratings</h2>
+        {% if userRatings is empty %}
+            <p>You haven't rated any movies yet.</p>
+        {% else %}
+            <ul>
+                {% for rating in userRatings %}
+                    <li>
+                        <strong>Movie Title:</strong> {{ rating.movie.title }}<br>
+                        <strong>Rating:</strong> {{ rating.rating }}<br>
+                        <strong>Review:</strong> {{ rating.review }}
+                    </li>
+                    <br>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    {% endblock %}
+</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<html>#}
+{#<head>#}
+{#    <title>Home</title>#}
+{#    <link rel="stylesheet" href="{{ asset('css/home.css') }}">#}
+{#</head>#}
+{#<body>#}
+{#<header class="home-header">#}
+{#    <div class="home-nav">#}
+{#        <a href="#"><img src="{{ asset('images/imdblogo.png') }}" alt="IMDb Logo" class="logo"></a>#}
+{#        <i class="fa fa-user-o" aria-hidden="true"></i>#}
+{#        {% if app.user %}#}
+{#            <div class="mb-3">#}
+{#                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>#}
+{#            </div>#}
+{#        {% endif %}#}
+{#    </div>#}
+{#</header>#}

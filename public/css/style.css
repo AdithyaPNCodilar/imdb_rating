@@ -1,0 +1,151 @@
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.form-control {
+    margin: 0;
+    vertical-align: middle;
+    font-size: 100%;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    height: 31px;
+    padding: 3px 7px;
+    line-height: normal;
+    margin-bottom: 10px;
+    border: 1px solid #aeaeae;
+    border-top-color: #949494;
+    border-radius: 3px;
+}
+
+.btn {
+    background-color: #f0c14b;
+    color: black;
+    padding: 0 10px 0 11px;
+    display: block;
+    font-family: Arial, sans-serif;
+    line-height: 29px;
+    font-size: 13px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0 solid;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+    border-color: #a88734 #9c7e31 #846a29;
+    background-color: #f0c14b;
+    opacity: 0.7;
+}
+/*.registration {*/
+/*    margin-bottom: 26px!important;*/
+/*}*/
+/*.registration{*/
+/*    display: block;*/
+/*    border-radius: 4px;*/
+/*    border: 1px #ddd solid;*/
+/*    background-color: #fff;*/
+/*}*/
+/*.registration .registration-box {*/
+/*    border-radius: 4px;*/
+/*    position: relative;*/
+/*    padding: 14px 18px;*/
+/*}*/
+.registeration {
+    position: relative;
+    padding: 14px 18px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+.h1{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    padding-bottom: 4px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.form-container {
+    background-color: #fff;
+    border: 10px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-top: 20px;
+    text-align: left;
+    border:1px #0F1111;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.logo-sec{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.head{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.centered-text {
+    text-align: center;
+    margin-top: 20px;
+}
+.centered-text a {
+    display: inline-block;
+    margin-left: 5px;
+}
+.centered-button {
+    text-align: center;
+    margin-left: 100px;
+}
+.a-link-nav-icon{
+    margin-top: 50px;
+}
