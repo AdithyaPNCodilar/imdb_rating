@@ -20,6 +20,18 @@ class HomeController extends AbstractController
         // Fetch movies
         $movies = $movieRepository->findAll();
 
+        // Calculate average ratings for each movie
+        $averageRatings = [];
+        foreach ($movies as $movie) {
+            $ratings = $ratingRepository->findBy(['movies' => $movie]);
+            $totalRatings = count($ratings);
+            $sumRatings = array_reduce($ratings, function ($carry, $rating) {
+                return $carry + $rating->getRating();
+            }, 0);
+            $average = $totalRatings > 0 ? $sumRatings / $totalRatings : 0;
+            $averageRatings[$movie->getId()] = $average;
+        }
+
         // Fetch user ratings if the user is authenticated
         $userRatings = [];
         if ($user) {
@@ -28,7 +40,8 @@ class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             'movies' => $movies,
-            'userRatings' => $userRatings, // Pass user ratings to the template
+            'userRatings' => $userRatings,
+            'averageRatings' => $averageRatings,
         ]);
     }
 }
